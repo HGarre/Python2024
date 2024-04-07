@@ -57,7 +57,8 @@ def distance(lat1_sing, lat1_deg,lat1_min,long1_sing, long1_deg,long1_min, lat2_
     lat2=radians(lat2_sing,lat2_deg,lat2_min)
     distance=haversine(lat1,long1,lat2,long2)*6367
     return(distance)
-#Print Distance between Amsterdam and Montreal
-#print(distance(1,52,22, 1,4,32,1, 45, 30, -1, 73, 35))
 
-#The flying distance between Amsterdam and montreal is 5471.085841640851 km.
+if __name__ == '__main__':
+    #Print Distance between Amsterdam and Montreal
+    print(distance(1,52,22, 1,4,32,1, 45, 30, -1, 73, 35))
+

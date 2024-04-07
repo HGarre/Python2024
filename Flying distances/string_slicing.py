@@ -12,5 +12,6 @@ def slice_better(str):
         out += [word]
     return out
 
-print(slice_better('split this string in words'))
-print(slice_better(' split this     string in words    '))
+if __name__ == '__main__':
+    print(slice_better('split this string in words'))
+    print(slice_better(' split this     string in words    '))

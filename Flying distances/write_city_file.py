@@ -26,12 +26,17 @@
 # - The "cities" function returns a dictionary containing the geodata of Amsterdam, Auckland and Montreal
 # - The "print_cities" function creates a file into which the geodata is printed, it returns None
 
+import shelve
+city_data = shelve.open('city_data')
+
 def cities ():
     city1 = ('Amsterdam', (52, 22, 'N'), (4, 32, 'E'))
     city2 = ('Auckland', (36, 52, 'S'), (174, 45, 'E'))
     city3 = ('Montreal', (45, 30, 'N'), (73, 35, 'W'))
-    city_data = {city1[0]: city1, city2[0]: city2, city3[0]: city3}
-    return city_data
+    city_data['Amsterdam'] = city1
+    city_data['Aukland'] = city2
+    city_data['Montreal'] = city3
+
 
 def print_cities(file_name, city_data):
     file = open(file_name, 'w')
@@ -42,5 +47,8 @@ def print_cities(file_name, city_data):
         file.write('Name: %-20s Latitute: %-10s Longitute: %-10s  \n' % (name, latitute, longitute))
     file.close()
 
-print_cities('cities.txt', cities())
+#cities()
+print_cities('cities.txt', city_data)
+
+city_data.close()
 
