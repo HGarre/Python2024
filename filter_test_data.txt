@@ -1,0 +1,13 @@
+a string : containg a strange colon
+more tests :
+# a coment
+Latitute
+Longitute
+Latitute and Longitute
+# some html:
+  <body>
+      <header>
+      	         <h1>Startseite für Tibatong</h1>
+      </header>
+      <nav>
+ 
