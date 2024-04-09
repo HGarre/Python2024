@@ -17,8 +17,7 @@
 
 #Structures
 # A for-loop is used to read the input_file line by line
-# A if-statement is used to check whether the absence or presence of the pattern should be checked
-# A if-statement is used check whether the pattern is present/absent in the line and print those lines t a output_file
+# A if-statement is used check whether the pattern is present/absent in the line and print those lines to an output_file
 
 #Output
 #The function does not return any output but created a file with all lines that contain/not contain the pattern
@@ -31,13 +30,11 @@ def filter_lines (input_file, output_file, pattern, contain):
     output = open(output_file, 'w')
     s = re.compile(pattern)
     for line in input:
-        if contain:
-            if s.search(line):
+        if contain and s.search(line):
                 output.write(line)
-        else:
-            if not s.search(line):
+        elif not contain and not s.search(line):
                 output.write(line)
     input.close()
     output.close()
 
-filter_lines('filter_test_data.txt', 'filter_test_output.txt', 'Latitute|Longitute', True)
+filter_lines('filter_test_data.txt', 'filter_test_output.txt', 'Latitute|Longitute', False)
